@@ -1,0 +1,24 @@
+name: bybit cron
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "*/10 * * * *"
+
+
+jobs:
+  bybit-spot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://api.bybit.com/v5/market/tickers?category=spot
+  bybit-future:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://api.bybit.com/v5/market/tickers?category=linear
+
+
+
