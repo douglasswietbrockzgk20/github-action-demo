@@ -1,0 +1,21 @@
+name: bitget cron
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "*/10 * * * *"
+
+
+jobs:
+  bitget-spot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://api.bitget.com/api/v2/spot/public/coins
+  bitget-future:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://api.bitget.com/api/v2/mix/market/tickers
