@@ -1,0 +1,23 @@
+name: ffmpeg
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-latest,ubuntu-22.04,ubuntu-24.04-arm,ubuntu-22.04-arm]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: install ffmpeg
+        run: |
+          apt-get update
+          apt install ffmpeg
+          ffpmeg
+          
