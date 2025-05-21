@@ -20,5 +20,5 @@ jobs:
         run: |
           apt-get update
           apt-get install ffmpeg -y
-          ffmpeg
+          ffmpeg -version
           
