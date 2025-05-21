@@ -19,6 +19,6 @@ jobs:
       - name: install ffmpeg
         run: |
           apt-get update
-          apt-get install ffmpeg
+          apt-get install ffmpeg -y
           ffmpeg
           
