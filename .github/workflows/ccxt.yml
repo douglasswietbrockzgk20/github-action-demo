@@ -11,7 +11,7 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.9", "3.11", "3.12", "3.13"]
-        runner: [ubuntu-latest,ubuntu-24.04-arm]
+        runner: [ubuntu-latest,ubuntu-22.04,ubuntu-24.04-arm,ubuntu-22.04-arm]
 
     steps:
       - name: Checkout repository
