@@ -1,0 +1,24 @@
+name: ffmpeg-container
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [python:3.9-bullseye,python:3.11-bullseye,python:3.11-bookworm]
+        runner: [ubuntu-latest,ubuntu-22.04,ubuntu-24.04-arm,ubuntu-22.04-arm]
+    container: ${{matrix.containers}}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install ffmpeg
+          ffmpeg
+          
