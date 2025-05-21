@@ -18,4 +18,7 @@ jobs:
     steps:
       - name: query
         run: |
-          curl https://api.bitget.com/api/v2/mix/market/tickers
+          curl https://api.bitget.com/api/v2/mix/market/tickers?productType=USDT-FUTURES
+
+
+
