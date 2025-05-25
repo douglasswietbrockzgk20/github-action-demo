@@ -1,4 +1,4 @@
-name: Solana Docker Build
+name: Solana agave Docker Build
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build --file solana.Dockerfile . -t solana:latest
+          docker build --file solana2.Dockerfile . -t solana:latest
       - name: Test Docker Image
         run: |
           docker run --rm solana:latest solana --version

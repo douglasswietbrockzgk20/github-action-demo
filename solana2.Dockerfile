@@ -11,7 +11,7 @@ RUN rustup component add rustfmt
 RUN apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler -y
 RUN apt-get install git -y
 WORKDIR /app
-RUN git clone https://github.com/solana-labs/solana.git
-WORKDIR /app/solana
+RUN git clone https://github.com/anza-xyz/agave.git
+WORKDIR /app/agave
 RUN ./scripts/cargo-install-all.sh --validator-only .
 ENV PATH="/solana"/bin:"$PATH"
