@@ -8,7 +8,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 RUN source $HOME/.cargo/env
 RUN rustup component add rustfmt
-RUN apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler -y
+RUN apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler libclang-dev -y
 RUN apt-get install git -y
 WORKDIR /app
 RUN git clone https://github.com/anza-xyz/agave.git
