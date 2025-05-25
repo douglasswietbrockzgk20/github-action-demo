@@ -1,4 +1,4 @@
-name: ffmpeg-container
+name: rockylinux
 
 on:
   push:
@@ -10,15 +10,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [python:3.9-bullseye,python:3.11-bullseye,python:3.11-bookworm,ubuntu:22.04,ubuntu:24.04]
+        containers: [rockylinux:8,rockylinux:9]
         runner: [ubuntu-latest,ubuntu-24.04-arm]
     container: ${{matrix.containers}}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: install ffmpeg
+      - name: commands
         run: |
-          apt-get update
-          apt-get install ffmpeg -y
-          ffmpeg -version
-          
+            yum update -y
+            yum install ffmpeg -y
+            ffmpeg -version
