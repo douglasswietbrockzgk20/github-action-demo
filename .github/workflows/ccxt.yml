@@ -25,5 +25,5 @@ jobs:
       - name: install ccxt
         run: |
           pip install ccxt
-          python3 ccxt.py
+          python3 ccxt_demo.py
           
