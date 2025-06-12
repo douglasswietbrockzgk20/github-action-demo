@@ -1,4 +1,4 @@
-name: okx cron
+name: crypto okx cron
 on:
   workflow_dispatch:
   push:

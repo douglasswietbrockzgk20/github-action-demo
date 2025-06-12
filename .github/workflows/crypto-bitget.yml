@@ -1,4 +1,4 @@
-name: bitget cron
+name: crypto bitget cron
 on:
   workflow_dispatch:
   push:
