@@ -1,0 +1,24 @@
+name: okx cron
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "*/10 * * * *"
+
+
+jobs:
+  okx-spot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://www.okx.com/api/v5/public/instruments?instType=SPOT
+  okx-swap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://www.okx.com/api/v5/public/instruments?instType=SWAP
+
+
+
