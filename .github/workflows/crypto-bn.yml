@@ -1,0 +1,24 @@
+name: crypto bn cron
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "*/10 * * * *"
+
+
+jobs:
+  bn-spot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://api.binance.com/api/v3/ticker/price
+  bn-swap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: query
+        run: |
+          curl https://fapi.binance.com/fapi/v1/ticker/price
+
+
+
