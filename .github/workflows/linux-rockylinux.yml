@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [rockylinux:8,rockylinux:9]
+        containers: [rockylinux:8,rockylinux:9,rockylinux:10]
         runner: [ubuntu-latest,ubuntu-24.04-arm]
     container: ${{matrix.containers}}
     steps:
